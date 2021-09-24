@@ -52,7 +52,7 @@ yargs.command({
    command: 'list',
    describe: 'listing a task',
    handler: function (){
-      console.log('listing a task!');
+      task_route.listTasks();
    }
 })
 

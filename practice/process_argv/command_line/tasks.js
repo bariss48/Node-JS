@@ -38,6 +38,14 @@ const addTask = function (title, body) {
        saveTasks(find_remove_item);
    }
 
+   const listTasks = function(){
+      const tasks = loadTasks()
+      console.log(chalk.green.inverse('All Tasks Here:'));
+      tasks.forEach(element => {
+          console.log('<--Tasks-->'+' '+element.title+' '+'<--Body-->'+' '+element.body);
+      });
+   }
+
 
    const saveTasks = function(task_array){
      const dataJSON = JSON.stringify(task_array);
@@ -59,4 +67,5 @@ module.exports = {
     getTasks: getTasks,
     addTask: addTask,
     delete_task: delete_task,
+    listTasks: listTasks,
 }
