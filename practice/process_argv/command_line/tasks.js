@@ -17,11 +17,13 @@ const addTask = function (title, body) {
         body: body
     })   
       saveTasks(tasks);
-      console.log("Success You are added a new task!");
+      console.log(chalk.green.inverse('Success You are added a new task!'));
     } else {
-        console.log("You are using same title change it!");
+        console.log(chalk.red.inverse('You are using same title change it!'));
     }
    }
+
+   debugger
   
    const delete_task = function (title){
        const tasks = loadTasks()
