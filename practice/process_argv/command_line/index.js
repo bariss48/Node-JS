@@ -57,7 +57,3 @@ yargs.command({
 })
 
 yargs.parse();
-
-app.listen(3000, () => {
-   console.log("server active");
-});
