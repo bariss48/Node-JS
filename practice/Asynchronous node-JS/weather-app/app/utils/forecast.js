@@ -2,17 +2,16 @@ const request = require('request');
 
 const forecast = (latitude, longtidude, callback) => {
     const url = 'http://api.weatherstack.com/current?access_key=09bcffdc274fba2220ee62396cbfbd15&query=' + latitude + ',' + longtidude //+ '&units=f'
-    request({url: url, json: true }, (err, res) => {
+    request({url, json: true }, (err, {body}) => {
     if( err ){
         callback('unable services!',undefined)
-     }else if(res.body.err){
+     }else if(body.err){
         callback('we cant find address try another',undefined)
      } else {
-        callback(undefined,res.body.current.temperature+"-"+res.body.current.feelslike,
+        callback(undefined,body.location.localtime+"-Temperature:"+body.current.temperature+" "+"-Feelslike:"+body.current.feelslike+" "+"-Forecast:"+body.current.weather_descriptions+" "+"-humidity:"+body.current.humidity+" "+"-wind_speed:"+body.current.wind_speed,
        )
      }
 })
-
 }
 
 module.exports = forecast
