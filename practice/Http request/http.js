@@ -15,7 +15,6 @@ const request = http.request(url, (response) => {
 
 })
 
-
 request.on('error', (error) => {
     console.log('An error', error)
 })
