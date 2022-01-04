@@ -1,17 +1,12 @@
-console.log('hoşgeldin')
-
+console.log('1 -- başlangıç (start)');
 setTimeout(() => {
-    console.log('this must execute last');
+    console.log('Merhaba ben event-loop(2) dan geliyorum ve Async şekilde çalışıyorum!');
 },2000)
-
+console.log('2 -- ikinci run edilen yer')
 setTimeout(() => {
-    // this is let's go to NODE-API after immedently goes to Event Loop and waiting Call stack empty
-    console.log('this must be 3 th runned why??');
+    console.log('Event-Loop da ilk sırada ben varım!!');
 },0)
-
-console.log('güle güle')
-
-
+console.log('3 -- güle güle')
 
 const sum_number = (a,b,callback) => {
       setTimeout( () => {
